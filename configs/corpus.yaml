@@ -1,0 +1,8 @@
+version: 1
+languages: [fr, en]
+texts:
+  - {key: rgpd,     celex: "32016R0679", label: "Règlement (UE) 2016/679 (RGPD)",      expected_articles: 99}
+  - {key: ai_act,   celex: "32024R1689", label: "Règlement (UE) 2024/1689 (AI Act)",   expected_articles: 113}
+  - {key: dsa,      celex: "32022R2065", label: "Règlement (UE) 2022/2065 (DSA)",      expected_articles: 93}
+  - {key: data_act, celex: "32023R2854", label: "Règlement (UE) 2023/2854 (Data Act)", expected_articles: 50}
+  - {key: dma,      celex: "32022R1925", label: "Règlement (UE) 2022/1925 (DMA)",      expected_articles: 54} 
