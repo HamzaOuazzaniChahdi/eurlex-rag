@@ -8,12 +8,16 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "lxml>=6.1.3",
     "pyyaml>=6.0.3",
     "requests>=2.34.2",
 ]
 
 [project.scripts]
 eurlex-rag = "eurlex_rag:main"
+eurlex-fetch = "eurlex_rag.ingestion.fetch:main"
+eurlex-parse = "eurlex_rag.parsing.parse:main"
 
 [build-system]
 requires = ["uv_build>=0.12.0,<0.13.0"]
