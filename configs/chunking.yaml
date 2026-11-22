@@ -1,0 +1,26 @@
+version: 1
+
+# "approx" (≈ 3,5 caractères/token) ou identifiant Hugging Face du tokenizer.
+# On utilise celui du modèle d'embeddings pour que les tailles soient exactes.
+tokenizer: "BAAI/bge-m3"
+
+# Budgets en tokens (comptés sur fil d'Ariane + texte, c'est-à-dire ce qui est embeddé)
+single_chunk_max_tokens: 700   # article <= ce seuil : 1 seul chunk
+target_tokens: 450             # taille visée quand on découpe un article long
+max_tokens: 800                # plafond lors des fusions de petits chunks
+min_tokens: 80                 # en dessous, on fusionne avec un voisin
+parent_max_tokens: 1500        # article complet renvoyé au LLM seulement s'il tient
+
+# Articles de définitions : 1 définition = 1 chunk (titres comparés en minuscules)
+definition_titles: [définitions, definitions]
+
+display_names:                 # nom court utilisé dans le fil d'Ariane
+  rgpd:     {fr: RGPD,     en: GDPR}
+  ai_act:   {fr: AI Act,   en: AI Act}
+  dsa:      {fr: DSA,      en: DSA}
+  data_act: {fr: Data Act, en: Data Act}
+  dma:      {fr: DMA,      en: DMA}
+
+labels:
+  recital:    {fr: Considérant, en: Recital}
+  definition: {fr: Définition,  en: Definition}
